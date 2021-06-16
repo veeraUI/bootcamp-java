@@ -2,12 +2,9 @@ package MotorBike;
 
 public class MotorBikeRunner {
     public static void main(String[] args) {
-        MotorBike Honda = new MotorBike();
-        MotorBike Harley = new MotorBike();
+        MotorBike Honda = new MotorBike(100);
+        MotorBike Harley = new MotorBike(50);
         MotorBike American = new MotorBike();
-        Honda.setSpeed(100);
-        Harley.setSpeed(20);
-        American.setSpeed(50);
 
         Honda.start();
         Honda.decrementSpeed(1);
