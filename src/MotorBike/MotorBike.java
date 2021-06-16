@@ -6,6 +6,15 @@ public class MotorBike {
     public int getSpeed() {
         return speed;
     }
+    // default constructor
+    MotorBike() {
+        //constructor calling constructor
+        this(5);
+    }
+    // custom constructor
+    MotorBike(int speed) {
+        setSpeed(speed);
+    }
 
     public void printSpeed() {
         System.out.printf("Speed of the Bike: %d", getSpeed()).println();
