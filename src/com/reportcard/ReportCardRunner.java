@@ -11,5 +11,6 @@ public class ReportCardRunner {
         System.out.println(student.getAverageMark());
         System.out.println(student.getMinMark());
         System.out.println(student.getMaxMark());
+        System.out.println(student);
     }
 }

@@ -1,12 +1,12 @@
 package com.reportcard;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collections;
 
 public class ReportCard {
     private String name;
-    private int[] marks;
+    private ArrayList<Integer> marks = new ArrayList<Integer>();
     // int[] ---> int...
     ReportCard(String name, int... marks){
         setName(name);
@@ -18,7 +18,9 @@ public class ReportCard {
     }
 
     public void setMarks(int[] marks) {
-        this.marks = marks;
+        for(int i : marks) {
+            this.marks.add(i);
+        }
     }
 
     public String getName() {
@@ -30,7 +32,7 @@ public class ReportCard {
     }
 
     public int getNumberOfMarks() {
-        return marks.length;
+        return marks.size();
     }
 
     public int getTotalSumOfMarks(){
@@ -42,28 +44,18 @@ public class ReportCard {
     }
 
     public int getMaxMark(){
-        int maxMark = Integer.MIN_VALUE; //000
-        for(int min: marks) { //200, 500, 600, 100
-            if(min > maxMark) {
-                maxMark = min;
-            }
-        }
-
-        return maxMark;
+        return Collections.max(this.marks);
     }
 
     public int getMinMark() {
-        int minMark = Integer.MAX_VALUE; //666600
-        for(int min: marks) { //200, 500, 600, 100
-            if(min < minMark) {
-                minMark = min;
-            }
-        }
-
-        return minMark;
+       return Collections.min(this.marks);
     }
 
     public BigDecimal getAverageMark() {
-        return new BigDecimal(getTotalSumOfMarks()).divide(new BigDecimal(marks.length));
+        return new BigDecimal(getTotalSumOfMarks()).divide(new BigDecimal(marks.size()));
+    }
+
+    public String toString() {
+        return name + marks;
     }
 }
