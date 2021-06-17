@@ -4,8 +4,7 @@ import java.util.Arrays;
 
 public class ReportCardRunner {
     public static void main(String[] args) {
-        int[] marks = new int[]{20,30,40,50,90};
-        ReportCard student = new ReportCard("Veera", marks);
+        ReportCard student = new ReportCard("Veera", 20,30,40,50,90);
         System.out.println(student.getTotalSumOfMarks());
         System.out.println(student.getMarks());
         System.out.println(student.getName());

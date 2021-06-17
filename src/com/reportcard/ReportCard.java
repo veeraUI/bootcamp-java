@@ -7,7 +7,8 @@ import java.util.Collections;
 public class ReportCard {
     private String name;
     private int[] marks;
-    ReportCard(String name, int[] marks){
+    // int[] ---> int...
+    ReportCard(String name, int... marks){
         setName(name);
         setMarks(marks);
     }
